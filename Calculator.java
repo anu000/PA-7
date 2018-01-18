@@ -29,7 +29,8 @@ public class Calculator extends JFrame{
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 0;
       g.gridy=0;
-      
+      setTitle("Calculator"); //add title name "Calculator"
+
    }
    
    
