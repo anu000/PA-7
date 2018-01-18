@@ -1,4 +1,4 @@
- import java.awt.GridBagConstraints;
+import java.awt.GridBagConstraints;
    import java.awt.GridBagLayout;
    import java.awt.Insets;
    import java.awt.event.ActionEvent;
@@ -20,6 +20,17 @@
    
    public class Calculator extends JFrame{
       JButton button1;
+      JButton button2;
+      JButton button3;
+      JButton button4;
+      JButton button5;
+      JButton button6;
+      JButton button7;
+      JButton button8;
+      JButton button9;
+      JButton buttonPlus;
+      JButton buttonMinus;
+      JButton buttonEnter;
    
       public Calculator(){
       
@@ -31,7 +42,6 @@
          g.gridx = 0;
          g.gridy=0;
          setTitle("Calculator"); //add title name "Calculator"
-
          
       //button 1 
       button1 = new JButton("1");
@@ -39,7 +49,95 @@
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 5;
       g.gridy=4;
-      add(button1,g);  
+      add(button1,g); 
+      
+      //button 2
+      button2 = new JButton("2");
+      g.insets = new Insets(0,6,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 6;
+      g.gridy=4;
+      add(button2,g); 
+      
+      //button 3
+      button3 = new JButton("3");
+      g.insets = new Insets(0,7,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 7;
+      g.gridy=4;
+      add(button3,g);
+      
+      //button 4
+      button4 = new JButton("4");
+      g.insets = new Insets(1,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 5;
+      g.gridy=3;
+      add(button4,g);  
+      
+      //button 5
+      button5 = new JButton("5");
+      g.insets = new Insets(1,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 6;
+      g.gridy=3;
+      add(button5,g); 
+      
+      //button 6
+      button6 = new JButton("6");
+      g.insets = new Insets(1,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 7;
+      g.gridy=3;
+      add(button6,g); 
+      
+      //button 7
+      button7 = new JButton("7");
+      g.insets = new Insets(2,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 5;
+      g.gridy=2;
+      add(button7,g); 
+      
+      //button 8
+      button8 = new JButton("8");
+      g.insets = new Insets(2,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 6;
+      g.gridy=2;
+      add(button8,g);
+      
+      //button 9
+      button9 = new JButton("9");
+      g.insets = new Insets(2,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 7;
+      g.gridy=2;
+      add(button9,g);
+      
+      //enter button
+      buttonEnter = new JButton("Enter");
+      g.insets = new Insets(0,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 8;
+      g.gridy=4;
+      add(buttonEnter,g);
+      
+      //plus button
+      buttonPlus = new JButton("+");
+      g.insets = new Insets(1,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 8;
+      g.gridy=3;
+      add(buttonPlus,g); 
+      
+      //minus button
+      buttonMinus = new JButton("-");
+      g.insets = new Insets(2,5,10,10);
+      g.fill = GridBagConstraints.HORIZONTAL;
+      g.gridx = 8;
+      g.gridy=2;
+      add(buttonMinus,g);
          
       }
       
