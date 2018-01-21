@@ -1,4 +1,4 @@
-import java.awt.GridBagConstraints;
+   import java.awt.GridBagConstraints;
    import java.awt.GridBagLayout;
    import java.awt.Insets;
    import java.awt.event.ActionEvent;
@@ -120,6 +120,13 @@ import java.awt.GridBagConstraints;
       
       //enter button
       buttonEnter = new JButton("Enter");
+      buttonEnter.addActionListener(
+      new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+            System.out.println("Enter");
+            }
+         }
+      );
       g.insets = new Insets(0,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 8;
@@ -128,6 +135,13 @@ import java.awt.GridBagConstraints;
       
       //plus button
       buttonPlus = new JButton("+");
+      buttonPlus.addActionListener(
+      new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+            System.out.println("+");
+            }
+         }
+      );
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 8;
@@ -136,6 +150,13 @@ import java.awt.GridBagConstraints;
       
       //minus button
       buttonMinus = new JButton("-");
+      buttonMinus.addActionListener(
+         new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+            System.out.println("-");
+            }
+         }
+      );//end action listener
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 8;
@@ -145,87 +166,14 @@ import java.awt.GridBagConstraints;
       }
       
        
-   
       @Override
    public void actionPerformed(ActionEvent event){
-      JButton j = (JButton) event.getSource(); //creating the object for a button when the user inputs
+      System.out.println("Don't click me!");                 
+   }  
       
-      if (j == button1){
-         firstDigit = 1;
-      }
-      else if (j == button2){
-         firstDigit = 2;
-      }
-      else if (j == button3){
-         firstDigit = 3;
-      }
-      else if (j == button4){
-         firstDigit = 4;
-      }
-      else if (j == button5){
-         firstDigit = 5;
-      } 
-      else if (j == button6){
-         firstDigit = 6;
-      }
-      else if (j == button7){
-         firstDigit = 7;
-      }
-      else if (j == button8){
-         firstDigit = 8;
-      }
-      else if (j == button9){
-         firstDigit = 9;
-      }
-      
-      if (j == button1){
-         secondDigit = 1;
-      }
-      else if (j == button2){
-         secondDigit = 2;
-      }
-      else if (j == button3){
-         secondDigit = 3;
-      }
-      else if (j == button4){
-         secondDigit = 4;
-      }
-      else if (j == button5){
-         secondDigit = 5;
-      } 
-      else if (j == button6){
-         secondDigit = 6;
-      }
-      else if (j == button7){
-         secondDigit = 7;
-      }
-      else if (j == button8){
-         secondDigit = 8;
-      }
-      else if (j == button9){
-         secondDigit = 9;
-      }
-      
-      if (j == buttonPlus){
-         operation = "+";
-      }
-      else if (j == buttonMinus){
-         operation = "-";
-      }
-      
-      if (j == buttonEnter){
-         enterParameter = true;
-      }
-             
-   }
-       int firstDigit = 0;
-       int secondDigit = 0;
-       String operation = "";
-       boolean enterParameter = false;
-       int finalAnswer = 0;
-
       
        public static void main(String[] args){
+       
          Calculator s = new Calculator(); //creates a new calculator frame
          s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//calls on the exit on close variable 
                   
@@ -233,15 +181,7 @@ import java.awt.GridBagConstraints;
         s.pack();
         s.setVisible(true);//allows user to see 
         
-        if (buttonEnter == true){
-            if (operation == "+"){
-               finalAnswer = firstDigit + secondDigit;
-            }
-            else if (operation = "-"){
-               finalAnswer = firstDigit - secondDigit;
-            }
-            System.out.println(finalAnswer);
-        }
+        
         
         
       }
