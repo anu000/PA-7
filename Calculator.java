@@ -1,4 +1,4 @@
-     import java.awt.GridBagConstraints;
+import java.awt.GridBagConstraints;
    import java.awt.GridBagLayout;
    import java.awt.Insets;
    import java.awt.event.ActionEvent;
@@ -34,12 +34,9 @@
       JButton buttonMinus;
       JButton buttonEnter;
       
-      static String operation = "";//variable to store the operation
-      static boolean getAnswer = false;//variable to get the answer/if the enter was presseed
-      static int firstDigit = 0;// declare and initalize firstdigit variable
-      static int secondDigit = 0;//declare and intialize seconddigit variable
-      static int intAnswer = 0;//declare and initialize the answer 
-      static Scanner scnr = new Scanner(System.in);//creates a static scanner 
+
+      static int firstDigit = 0;//creates a first digit variable
+      static boolean add = true;//creates a boolean to determine add or subtract
       
       public Calculator(){
       
@@ -53,7 +50,20 @@
          setTitle("Calculator"); //add title name "Calculator"
          
       //button 1 
-      button1 = new JButton("1");
+      button1 = new JButton("1");//names button
+      button1.addActionListener(//adds the actionlistener
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){//if the variable is true 
+               firstDigit = firstDigit + 1;//add 1 to the firstDigit variable
+            }
+            else{//if it is false
+               firstDigit = firstDigit-1;//subtract 1 
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(0,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 5;
@@ -62,6 +72,19 @@
       
       //button 2
       button2 = new JButton("2");
+      button2.addActionListener(//actionlistener
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){//if true
+               firstDigit = firstDigit + 2;//add 2 to the variable
+            }
+            else{//if false
+               firstDigit = firstDigit-2;//subtract 2 from the variable
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(0,6,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 6;
@@ -70,6 +93,19 @@
       
       //button 3
       button3 = new JButton("3");
+      button3.addActionListener(//actionlistener 
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 3;
+            }
+            else{
+               firstDigit = firstDigit-3;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(0,7,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 7;
@@ -78,6 +114,19 @@
       
       //button 4
       button4 = new JButton("4");
+      button4.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 4;
+            }
+            else{
+               firstDigit = firstDigit-4;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 5;
@@ -86,6 +135,19 @@
       
       //button 5
       button5 = new JButton("5");
+      button5.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 5;
+            }
+            else{
+               firstDigit = firstDigit-5;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 6;
@@ -94,6 +156,19 @@
       
       //button 6
       button6 = new JButton("6");
+      button6.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 6;
+            }
+            else{
+               firstDigit = firstDigit-6;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 7;
@@ -102,6 +177,19 @@
       
       //button 7
       button7 = new JButton("7");
+      button7.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 7;
+            }
+            else{
+               firstDigit = firstDigit-7;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 5;
@@ -110,6 +198,19 @@
       
       //button 8
       button8 = new JButton("8");
+      button8.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+            if(add==true){
+               firstDigit = firstDigit + 8;
+            }
+            else{
+               firstDigit = firstDigit-8;
+            }
+         }
+      }
+      );
+
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 6;
@@ -121,7 +222,12 @@
       button9.addActionListener(
       new ActionListener(){
          public void actionPerformed(ActionEvent event){
-         
+            if(add==true){
+               firstDigit = firstDigit + 9;
+            }
+            else{
+               firstDigit = firstDigit-9;
+            }
          }
       }
       );
@@ -136,7 +242,7 @@
       buttonEnter.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            getAnswer = true;
+            System.out.println(firstDigit);
             }
          }
       );
@@ -151,7 +257,7 @@
       buttonPlus.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            operation = "+";
+            add = true;
             }
          }
       );
@@ -166,7 +272,7 @@
       buttonMinus.addActionListener(
          new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            operation = "-";
+            add = false;
             }
          }
       );//end action listener
@@ -184,18 +290,7 @@
    }  
       
       
-       public static void main(String[] args){//main method
-        
-        if (getAnswer == true){//if the enter button is pressed 
-            if (operation == "+"){//if operation is set to +
-               intAnswer = firstDigit + secondDigit;//add the numbers
-            }
-            else if (operation == "-"){//if operation is set to -
-               intAnswer = firstDigit - secondDigit;//subtract the numbers
-            }
-            System.out.println(intAnswer);//print out the answer
-        }
-        
+       public static void main(String[] args){
          
         Calculator s = new Calculator(); //creates a new calculator frame
         s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//calls on the exit on close variable 
@@ -203,10 +298,6 @@
         //display the window
         s.pack();
         s.setVisible(true);//allows user to see 
-        
-        
-        
-        
         
       }
    
