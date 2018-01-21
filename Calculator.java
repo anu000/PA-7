@@ -1,4 +1,4 @@
-   import java.awt.GridBagConstraints;
+     import java.awt.GridBagConstraints;
    import java.awt.GridBagLayout;
    import java.awt.Insets;
    import java.awt.event.ActionEvent;
@@ -112,6 +112,13 @@
       
       //button 9
       button9 = new JButton("9");
+      button9.addActionListener(
+      new ActionListener(){
+         public void actionPerformed(ActionEvent event){
+         
+         }
+      }
+      );
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 7;
@@ -123,7 +130,7 @@
       buttonEnter.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            System.out.println("Enter");
+            getAnswer = true;
             }
          }
       );
@@ -138,7 +145,7 @@
       buttonPlus.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            System.out.println("+");
+            operation = "+";
             }
          }
       );
@@ -153,7 +160,7 @@
       buttonMinus.addActionListener(
          new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            System.out.println("-");
+            operation = "-";
             }
          }
       );//end action listener
@@ -164,22 +171,37 @@
       add(buttonMinus,g);
          
       }
-      
+      static String operation = "";
+      static boolean getAnswer = false;
+      static int firstDigit = 0;
+      static int secondDigit = 0;
+      static int intAnswer = 0;
        
       @Override
-   public void actionPerformed(ActionEvent event){
-      System.out.println("Don't click me!");                 
+   public void actionPerformed(ActionEvent event){                 
    }  
       
       
        public static void main(String[] args){
-       
-         Calculator s = new Calculator(); //creates a new calculator frame
-         s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//calls on the exit on close variable 
-                  
+        
+        if (getAnswer == true){
+            if (operation == "+"){
+               intAnswer = firstDigit + secondDigit;
+            }
+            else if (operation == "-"){
+               intAnswer = firstDigit - secondDigit;
+            }
+            System.out.println(intAnswer);
+        }
+        
+         
+        Calculator s = new Calculator(); //creates a new calculator frame
+        s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//calls on the exit on close variable 
+        
         //display the window
         s.pack();
         s.setVisible(true);//allows user to see 
+        
         
         
         
