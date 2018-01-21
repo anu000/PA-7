@@ -20,6 +20,7 @@
    import java.util.Scanner;
    
    public class Calculator extends JFrame implements ActionListener{
+      //creates buttons
       JButton button1;
       JButton button2;
       JButton button3;
@@ -33,7 +34,12 @@
       JButton buttonMinus;
       JButton buttonEnter;
       
-      static Scanner scnr = new Scanner(System.in);
+      static String operation = "";//variable to store the operation
+      static boolean getAnswer = false;//variable to get the answer/if the enter was presseed
+      static int firstDigit = 0;// declare and initalize firstdigit variable
+      static int secondDigit = 0;//declare and intialize seconddigit variable
+      static int intAnswer = 0;//declare and initialize the answer 
+      static Scanner scnr = new Scanner(System.in);//creates a static scanner 
       
       public Calculator(){
       
@@ -171,27 +177,23 @@
       add(buttonMinus,g);
          
       }
-      static String operation = "";
-      static boolean getAnswer = false;
-      static int firstDigit = 0;
-      static int secondDigit = 0;
-      static int intAnswer = 0;
+
        
       @Override
    public void actionPerformed(ActionEvent event){                 
    }  
       
       
-       public static void main(String[] args){
+       public static void main(String[] args){//main method
         
-        if (getAnswer == true){
-            if (operation == "+"){
-               intAnswer = firstDigit + secondDigit;
+        if (getAnswer == true){//if the enter button is pressed 
+            if (operation == "+"){//if operation is set to +
+               intAnswer = firstDigit + secondDigit;//add the numbers
             }
-            else if (operation == "-"){
-               intAnswer = firstDigit - secondDigit;
+            else if (operation == "-"){//if operation is set to -
+               intAnswer = firstDigit - secondDigit;//subtract the numbers
             }
-            System.out.println(intAnswer);
+            System.out.println(intAnswer);//print out the answer
         }
         
          
