@@ -17,8 +17,9 @@ import java.awt.GridBagConstraints;
    import java.awt.Graphics2D;
    import java.awt.Rectangle; 
    import javax.swing.JComponent;
+   import java.util.Scanner;
    
-   public class Calculator extends JFrame{
+   public class Calculator extends JFrame implements ActionListener{
       JButton button1;
       JButton button2;
       JButton button3;
@@ -31,7 +32,9 @@ import java.awt.GridBagConstraints;
       JButton buttonPlus;
       JButton buttonMinus;
       JButton buttonEnter;
-   
+      
+      static Scanner scnr = new Scanner(System.in);
+      
       public Calculator(){
       
       //grid background to create over all 
@@ -141,6 +144,86 @@ import java.awt.GridBagConstraints;
          
       }
       
+       
+   
+      @Override
+   public void actionPerformed(ActionEvent event){
+      JButton j = (JButton) event.getSource(); //creating the object for a button when the user inputs
+      
+      if (j == button1){
+         firstDigit = 1;
+      }
+      else if (j == button2){
+         firstDigit = 2;
+      }
+      else if (j == button3){
+         firstDigit = 3;
+      }
+      else if (j == button4){
+         firstDigit = 4;
+      }
+      else if (j == button5){
+         firstDigit = 5;
+      } 
+      else if (j == button6){
+         firstDigit = 6;
+      }
+      else if (j == button7){
+         firstDigit = 7;
+      }
+      else if (j == button8){
+         firstDigit = 8;
+      }
+      else if (j == button9){
+         firstDigit = 9;
+      }
+      
+      if (j == button1){
+         secondDigit = 1;
+      }
+      else if (j == button2){
+         secondDigit = 2;
+      }
+      else if (j == button3){
+         secondDigit = 3;
+      }
+      else if (j == button4){
+         secondDigit = 4;
+      }
+      else if (j == button5){
+         secondDigit = 5;
+      } 
+      else if (j == button6){
+         secondDigit = 6;
+      }
+      else if (j == button7){
+         secondDigit = 7;
+      }
+      else if (j == button8){
+         secondDigit = 8;
+      }
+      else if (j == button9){
+         secondDigit = 9;
+      }
+      
+      if (j == buttonPlus){
+         operation = "+";
+      }
+      else if (j == buttonMinus){
+         operation = "-";
+      }
+      
+      if (j == buttonEnter){
+         enterParameter = true;
+      }
+             
+   }
+       int firstDigit = 0;
+       int secondDigit = 0;
+       String operation = "";
+       boolean enterParameter = false;
+       int finalAnswer = 0;
+
       
        public static void main(String[] args){
          Calculator s = new Calculator(); //creates a new calculator frame
@@ -149,6 +232,18 @@ import java.awt.GridBagConstraints;
         //display the window
         s.pack();
         s.setVisible(true);//allows user to see 
+        
+        if (buttonEnter == true){
+            if (operation == "+"){
+               finalAnswer = firstDigit + secondDigit;
+            }
+            else if (operation = "-"){
+               finalAnswer = firstDigit - secondDigit;
+            }
+            System.out.println(finalAnswer);
+        }
+        
+        
       }
    
       
