@@ -38,6 +38,9 @@ import java.awt.GridBagConstraints;
       static int firstDigit = 0;//creates a first digit variable
       static boolean add = true;//creates a boolean to determine add or subtract
       
+      private JLabel displayAnswerLabel;
+      private JTextField displayAnswerField;
+      
       public Calculator(){
       
       //grid background to create over all 
@@ -49,6 +52,9 @@ import java.awt.GridBagConstraints;
          g.gridy=0;
          setTitle("Calculator"); //add title name "Calculator"
          
+      displayAnswerLabel = new JLabel("Answer");
+      
+     
       //button 1 
       button1 = new JButton("1");//names button
       button1.addActionListener(//adds the actionlistener
@@ -237,12 +243,28 @@ import java.awt.GridBagConstraints;
       g.gridy=2;
       add(button9,g);
       
+      displayAnswerField = new JTextField(15);
+      displayAnswerField.setEditable(false);
+      
+      g = new GridBagConstraints();
+      g.insets = new Insets(10, 0, 1, 10);
+      g.gridx = 10;
+      g.gridy = 1;
+      add(displayAnswerLabel, g);
+
+      g = new GridBagConstraints();
+      g.insets = new Insets(1, 0, 10, 10);
+      g.gridx = 10;
+      g.gridy = 2;
+      add(displayAnswerField, g);
+      
       //enter button
       buttonEnter = new JButton("Enter");
       buttonEnter.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            System.out.println(firstDigit);
+            displayAnswerField.setText(Integer.toString(firstDigit));
+            
             }
          }
       );
@@ -251,6 +273,8 @@ import java.awt.GridBagConstraints;
       g.gridx = 8;
       g.gridy=4;
       add(buttonEnter,g);
+    
+      
       
       //plus button
       buttonPlus = new JButton("+");
