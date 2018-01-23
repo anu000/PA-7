@@ -47,8 +47,8 @@
          setLayout(new GridBagLayout());
          g.insets = new Insets(50,50,1,0);
          g.fill = GridBagConstraints.HORIZONTAL;
-         g.gridx = 0;
-         g.gridy=0;
+         g.gridx = 0;//sets the origin
+         g.gridy=0;//sets the origin
          setTitle("Calculator"); //add title name "Calculator"
          
       //button 1 
@@ -68,11 +68,11 @@
       }
       );
 
-      g.insets = new Insets(0,5,10,10);
+      g.insets = new Insets(0,5,10,10);//dimensions 
       g.fill = GridBagConstraints.HORIZONTAL;
-      g.gridx = 5;
-      g.gridy=4;
-      add(button1,g); 
+      g.gridx = 5;//location on grid (x-axis) for the button 
+      g.gridy=4;// location on grid(y-axis) for the button 
+      add(button1,g); //adds the button to the grid 
       
       //button 2
       button2 = new JButton("2");//name buton 2
@@ -89,11 +89,11 @@
       }
       );
 
-      g.insets = new Insets(0,6,10,10);
+      g.insets = new Insets(0,6,10,10);// dimensions 
       g.fill = GridBagConstraints.HORIZONTAL;
-      g.gridx = 6;
-      g.gridy=4;
-      add(button2,g); 
+      g.gridx = 6;//location of button on x axis
+      g.gridy=4;//location of button on y axis 
+      add(button2,g); //adds second button to the grid at location g
       
       //button 3
       button3 = new JButton("3");//name button 3
@@ -110,11 +110,11 @@
       }
       );
 
-      g.insets = new Insets(0,7,10,10);
+      g.insets = new Insets(0,7,10,10);//sets dimensions and location 
       g.fill = GridBagConstraints.HORIZONTAL;
-      g.gridx = 7;
-      g.gridy=4;
-      add(button3,g);
+      g.gridx = 7;//location along x axis 
+      g.gridy=4;//location along y axis 
+      add(button3,g);//adds button 3 in the specified location 
       
       //button 4
       button4 = new JButton("4");//name button 4
@@ -133,9 +133,9 @@
 
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
-      g.gridx = 5;
-      g.gridy=3;
-      add(button4,g);  
+      g.gridx = 5;//location on x axis 
+      g.gridy=3;//location on y axis
+      add(button4,g);  //adds button 4 in specified location
       
       //button 5
       button5 = new JButton("5");//name button 5
@@ -151,7 +151,7 @@
          }
       }
       );
-
+      //same button set up as above 
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 6;
@@ -172,7 +172,7 @@
          }
       }
       );
-
+      //same button set up as above 
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 7;
@@ -193,7 +193,7 @@
          }
       }
       );
-
+      //same button set up as above 
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 5;
@@ -214,7 +214,7 @@
          }
       }
       );
-
+      //same button set up as above 
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 6;
@@ -235,6 +235,7 @@
          }
       }
       );
+      //same button set up as above 
       g.insets = new Insets(2,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 7;
@@ -269,6 +270,7 @@
             }
          }
       );
+      //same button set up as above 
       g.insets = new Insets(0,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 8;
@@ -284,6 +286,7 @@
             }
          }
       );
+      //same button set upas above 
       g.insets = new Insets(1,5,10,10);
       g.fill = GridBagConstraints.HORIZONTAL;
       g.gridx = 8;
