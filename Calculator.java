@@ -20,6 +20,7 @@ import java.awt.GridBagConstraints;
    import java.util.Scanner;
    
    public class Calculator extends JFrame implements ActionListener{
+            
       //creates buttons
       JButton button1;
       JButton button2;
@@ -34,7 +35,6 @@ import java.awt.GridBagConstraints;
       JButton buttonMinus;
       JButton buttonEnter;
       
-
       static int firstDigit = 0;//creates a first digit variable
       static boolean add = true;//creates a boolean to determine add or subtract
       
@@ -52,20 +52,19 @@ import java.awt.GridBagConstraints;
          g.gridy=0;
          setTitle("Calculator"); //add title name "Calculator"
          
-      displayAnswerLabel = new JLabel("Answer");
-      
-     
       //button 1 
       button1 = new JButton("1");//names button
       button1.addActionListener(//adds the actionlistener
       new ActionListener(){
          public void actionPerformed(ActionEvent event){
+        
             if(add==true){//if the variable is true 
                firstDigit = firstDigit + 1;//add 1 to the firstDigit variable
             }
             else{//if it is false
                firstDigit = firstDigit-1;//subtract 1 
             }
+            
          }
       }
       );
@@ -243,6 +242,10 @@ import java.awt.GridBagConstraints;
       g.gridy=2;
       add(button9,g);
       
+      //displaying answer in calculator interface
+      
+      displayAnswerLabel = new JLabel("Answer");
+      displayAnswerField = new JFormattedTextField(NumberFormat.getIntegerInstance());
       displayAnswerField = new JTextField(15);
       displayAnswerField.setEditable(false);
       
@@ -257,14 +260,13 @@ import java.awt.GridBagConstraints;
       g.gridx = 10;
       g.gridy = 2;
       add(displayAnswerField, g);
-      
+            
       //enter button
       buttonEnter = new JButton("Enter");
       buttonEnter.addActionListener(
       new ActionListener(){
             public void actionPerformed(ActionEvent event){
-            displayAnswerField.setText(Integer.toString(firstDigit));
-            
+            displayAnswerField.setText(Integer.toString(firstDigit));                    
             }
          }
       );
@@ -307,6 +309,8 @@ import java.awt.GridBagConstraints;
       add(buttonMinus,g);
          
       }
+      
+      
 
        
       @Override
