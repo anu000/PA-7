@@ -1,4 +1,4 @@
-import java.awt.GridBagConstraints;
+   import java.awt.GridBagConstraints;
    import java.awt.GridBagLayout;
    import java.awt.Insets;
    import java.awt.event.ActionEvent;
@@ -17,11 +17,10 @@ import java.awt.GridBagConstraints;
    import java.awt.Graphics2D;
    import java.awt.Rectangle; 
    import javax.swing.JComponent;
-   import java.util.Scanner;
    
    public class Calculator extends JFrame implements ActionListener{
             
-      //creates buttons
+      //create buttons with JButton
       JButton button1;
       JButton button2;
       JButton button3;
@@ -38,10 +37,10 @@ import java.awt.GridBagConstraints;
       static int firstDigit = 0;//creates a first digit variable
       static boolean add = true;//creates a boolean to determine add or subtract
       
-      private JLabel displayAnswerLabel;
-      private JTextField displayAnswerField;
+      private JLabel displayAnswerLabel; //display answer variable's label
+      private JTextField displayAnswerField; //display answer variable's field
       
-      public Calculator(){
+      public Calculator(){//constructor
       
       //grid background to create over all 
        GridBagConstraints g  = new GridBagConstraints();
@@ -53,15 +52,15 @@ import java.awt.GridBagConstraints;
          setTitle("Calculator"); //add title name "Calculator"
          
       //button 1 
-      button1 = new JButton("1");//names button
-      button1.addActionListener(//adds the actionlistener
+      button1 = new JButton("1");//name button 1
+      button1.addActionListener(//add the action listener
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
+         public void actionPerformed(ActionEvent event){//action listener imbedded method for button 1
         
-            if(add==true){//if the variable is true 
+            if(add==true){//if add is true 
                firstDigit = firstDigit + 1;//add 1 to the firstDigit variable
             }
-            else{//if it is false
+            else{//if add is false
                firstDigit = firstDigit-1;//subtract 1 
             }
             
@@ -76,14 +75,14 @@ import java.awt.GridBagConstraints;
       add(button1,g); 
       
       //button 2
-      button2 = new JButton("2");
-      button2.addActionListener(//actionlistener
+      button2 = new JButton("2");//name buton 2
+      button2.addActionListener(//add the action listener
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){//if true
+         public void actionPerformed(ActionEvent event){///action listener imbedded method for button 2
+            if(add==true){//if add is true
                firstDigit = firstDigit + 2;//add 2 to the variable
             }
-            else{//if false
+            else{//if add is false
                firstDigit = firstDigit-2;//subtract 2 from the variable
             }
          }
@@ -97,15 +96,15 @@ import java.awt.GridBagConstraints;
       add(button2,g); 
       
       //button 3
-      button3 = new JButton("3");
-      button3.addActionListener(//actionlistener 
+      button3 = new JButton("3");//name button 3
+      button3.addActionListener(//add action listener for button 3 
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 3;
+         public void actionPerformed(ActionEvent event){//action listener imbedded method for button 3
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 3;//add 2 to the variable
             }
-            else{
-               firstDigit = firstDigit-3;
+            else{//if add is false
+               firstDigit = firstDigit-3;//add 3 to the variable
             }
          }
       }
@@ -118,15 +117,15 @@ import java.awt.GridBagConstraints;
       add(button3,g);
       
       //button 4
-      button4 = new JButton("4");
-      button4.addActionListener(
+      button4 = new JButton("4");//name button 4
+      button4.addActionListener(//add action listener for button 4
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 4;
+         public void actionPerformed(ActionEvent event){//action listener method for button 4
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 4;//add 4 to the variable
             }
-            else{
-               firstDigit = firstDigit-4;
+            else{//if add is false
+               firstDigit = firstDigit-4;//subtract 4 to the variable
             }
          }
       }
@@ -139,15 +138,15 @@ import java.awt.GridBagConstraints;
       add(button4,g);  
       
       //button 5
-      button5 = new JButton("5");
-      button5.addActionListener(
+      button5 = new JButton("5");//name button 5
+      button5.addActionListener(//add action listener to button 5
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 5;
+         public void actionPerformed(ActionEvent event){//action listener method for button 5
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 5; //add 5 to the variable
             }
-            else{
-               firstDigit = firstDigit-5;
+            else{// if add is false
+               firstDigit = firstDigit-5;//subtract 5 from the variable
             }
          }
       }
@@ -160,15 +159,15 @@ import java.awt.GridBagConstraints;
       add(button5,g); 
       
       //button 6
-      button6 = new JButton("6");
-      button6.addActionListener(
+      button6 = new JButton("6");//name button 6
+      button6.addActionListener(//add action listener to button 6
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 6;
+         public void actionPerformed(ActionEvent event){//imbedded action listener method for button 6
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 6;//add 6 to variable
             }
-            else{
-               firstDigit = firstDigit-6;
+            else{//if add is false
+               firstDigit = firstDigit-6;//subtract 6 from variable
             }
          }
       }
@@ -181,15 +180,15 @@ import java.awt.GridBagConstraints;
       add(button6,g); 
       
       //button 7
-      button7 = new JButton("7");
-      button7.addActionListener(
+      button7 = new JButton("7");//name button 7
+      button7.addActionListener(//add action listener to button 7
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 7;
+         public void actionPerformed(ActionEvent event){//imbedded action listener method for button 7
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 7;//add 7 to the variable
             }
-            else{
-               firstDigit = firstDigit-7;
+            else{//if add is false
+               firstDigit = firstDigit-7;//subtract 7 from the variable
             }
          }
       }
@@ -202,15 +201,15 @@ import java.awt.GridBagConstraints;
       add(button7,g); 
       
       //button 8
-      button8 = new JButton("8");
-      button8.addActionListener(
+      button8 = new JButton("8");//name button 8 
+      button8.addActionListener(//add action listener to button 8
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 8;
+         public void actionPerformed(ActionEvent event){//action listener imbedded method for button 8
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 8;//add 8 to the variable
             }
-            else{
-               firstDigit = firstDigit-8;
+            else{//if add is false
+               firstDigit = firstDigit-8;//subtract 8 from the variable
             }
          }
       }
@@ -223,15 +222,15 @@ import java.awt.GridBagConstraints;
       add(button8,g);
       
       //button 9
-      button9 = new JButton("9");
-      button9.addActionListener(
+      button9 = new JButton("9");//name button 9
+      button9.addActionListener(//add action listener to button 9
       new ActionListener(){
-         public void actionPerformed(ActionEvent event){
-            if(add==true){
-               firstDigit = firstDigit + 9;
+         public void actionPerformed(ActionEvent event){//imbedded action listener method for button 9
+            if(add==true){//if add is true
+               firstDigit = firstDigit + 9;//add 9 to the variable
             }
-            else{
-               firstDigit = firstDigit-9;
+            else{//if add is false
+               firstDigit = firstDigit-9;//subtract 9 from the variable
             }
          }
       }
@@ -244,10 +243,10 @@ import java.awt.GridBagConstraints;
       
       //displaying answer in calculator interface
       
-      displayAnswerLabel = new JLabel("Answer");
-      displayAnswerField = new JFormattedTextField(NumberFormat.getIntegerInstance());
-      displayAnswerField = new JTextField(15);
-      displayAnswerField.setEditable(false);
+      displayAnswerLabel = new JLabel("Answer");//label for displaying answer
+      displayAnswerField = new JFormattedTextField(NumberFormat.getIntegerInstance());//formatted text field for answer displayed to be an integer
+      displayAnswerField = new JTextField(15);//text field for displaying answer
+      displayAnswerField.setEditable(false);//displaying answer not editable
       
       g = new GridBagConstraints();
       g.insets = new Insets(10, 0, 1, 10);
@@ -262,11 +261,11 @@ import java.awt.GridBagConstraints;
       add(displayAnswerField, g);
             
       //enter button
-      buttonEnter = new JButton("Enter");
-      buttonEnter.addActionListener(
+      buttonEnter = new JButton("Enter");//name enter button
+      buttonEnter.addActionListener(//add action listener to enter button
       new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-            displayAnswerField.setText(Integer.toString(firstDigit));                    
+            public void actionPerformed(ActionEvent event){//imbedded action listener method for enter button
+            displayAnswerField.setText(Integer.toString(firstDigit));//set text integer made string and display to interface                  
             }
          }
       );
@@ -276,14 +275,12 @@ import java.awt.GridBagConstraints;
       g.gridy=4;
       add(buttonEnter,g);
     
-      
-      
       //plus button
-      buttonPlus = new JButton("+");
-      buttonPlus.addActionListener(
+      buttonPlus = new JButton("+");//name plus button
+      buttonPlus.addActionListener(//add action listener to plus button
       new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-            add = true;
+            public void actionPerformed(ActionEvent event){//action listener imbedded method for plus button
+            add = true;//set add to true which is same as default
             }
          }
       );
@@ -294,11 +291,11 @@ import java.awt.GridBagConstraints;
       add(buttonPlus,g); 
       
       //minus button
-      buttonMinus = new JButton("-");
-      buttonMinus.addActionListener(
+      buttonMinus = new JButton("-");//name minus button
+      buttonMinus.addActionListener(//add action listener to minus button
          new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-            add = false;
+            public void actionPerformed(ActionEvent event){//action listener imbedded method for minus button
+            add = false;//add is set to false when minus button is pressed
             }
          }
       );//end action listener
@@ -308,17 +305,14 @@ import java.awt.GridBagConstraints;
       g.gridy=2;
       add(buttonMinus,g);
          
-      }
+      }//end of constructor
       
       
-
-       
       @Override
-   public void actionPerformed(ActionEvent event){                 
+   public void actionPerformed(ActionEvent event){              
    }  
-      
-      
-       public static void main(String[] args){
+
+       public static void main(String[] args){//main method
          
         Calculator s = new Calculator(); //creates a new calculator frame
         s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//calls on the exit on close variable 
